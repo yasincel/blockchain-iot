@@ -1,0 +1,32 @@
+pragma solidity >=0.7.0 <0.9.0;
+
+contract Temp{
+
+    uint[] public QE;
+    uint[] public QWX;
+    uint[] public Tr;
+    uint[] public TrE;
+    uint[] public QS;
+    uint[] public QC;
+    uint[] public QW;
+    uint [] public Average;
+    string [] public date;
+    string [] public time;
+
+    function set(string memory _date, string memory _time, uint _QE, uint _QWX, uint _Tr, uint _TrE, uint _QS, uint _QC, uint _QW) public returns (uint){
+      date.push(_date);
+      time.push(_time);
+      QE.push(_QE);
+      QWX.push(_QWX);
+      Tr.push(_Tr);
+      TrE.push(_TrE);
+      QS.push(_QS);
+      QC.push(_QC);
+      QW.push(_QW);
+      uint Ave;
+      Ave=(_QC+_QE+_QS+_QW+_QWX+_Tr+_TrE)/7;
+      Average.push(Ave);
+      return Ave;
+    }
+
+}
